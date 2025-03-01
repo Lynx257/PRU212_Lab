@@ -10,7 +10,6 @@ public class BackgroundScroller : MonoBehaviour
     {
         mat = GetComponent<Renderer>().material;
     }
-
     // Update is called once per frame
     void Update()
     {
