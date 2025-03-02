@@ -31,9 +31,17 @@ public class EnemySpawner : MonoBehaviour
         {
             Vector2 spawnPosition = GetSpawnPosition();
             enemy.transform.position = spawnPosition;
+            SpriteRenderer spriteRenderer = enemy.GetComponent<SpriteRenderer>();
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = (spawnPosition.x > 0);
+            }
+
             enemy.SetActive(true);
         }
     }
+
 
     Vector2 GetSpawnPosition()
     {
