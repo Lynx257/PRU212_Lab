@@ -4,10 +4,16 @@ public class BulletMovement : MonoBehaviour
 {
     public float speed = 5f;
     private Rigidbody2D rb;
+    private Score score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameObject scoreUI = GameObject.Find("Score");
+        if (scoreUI != null)
+        {
+            score = scoreUI.GetComponent<Score>();
+        }
     }
 
     // Update is called once per frame
@@ -26,6 +32,10 @@ public class BulletMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             transform.gameObject.SetActive(false);
+            if (score != null)
+            {
+                score.EnemyKilled();
+            }
         }
     }
 }
