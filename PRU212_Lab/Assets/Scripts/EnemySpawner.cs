@@ -6,7 +6,8 @@ public class EnemySpawner : MonoBehaviour
     int period;
     private float time = 0;
     private Camera mainCamera;
-
+    BoxCollider2D boxCollider;
+    EnemyChasing enemyChasing;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,10 +38,20 @@ public class EnemySpawner : MonoBehaviour
             {
                 spriteRenderer.flipX = (spawnPosition.x > 0);
             }
-
+            boxCollider = enemy.GetComponent<BoxCollider2D>();
+            if (boxCollider != null)
+            {
+                boxCollider.enabled = true;
+            }
+            enemyChasing = enemy.GetComponent<EnemyChasing>();
+            if (enemyChasing != null)
+            {
+                enemyChasing.enabled = true;
+            }
             enemy.SetActive(true);
         }
     }
+
 
 
     Vector2 GetSpawnPosition()

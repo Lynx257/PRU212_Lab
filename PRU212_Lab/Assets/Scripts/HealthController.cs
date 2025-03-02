@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
@@ -17,16 +18,25 @@ public class HealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.gameObject.CompareTag("Player"))
+        {
+            DisplayHeart();
+        }
+    }
+
+    void DisplayHeart()
+    {
         if (health > numberOfHearts)
         {
             health = numberOfHearts;
         }
-        for(int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
-            if(i < health)
+            if (i < health)
             {
                 hearts[i].sprite = fullHeart;
-            } else
+            }
+            else
             {
                 hearts[i].sprite = emptyHeart;
             }
@@ -38,6 +48,13 @@ public class HealthController : MonoBehaviour
             {
                 hearts[i].enabled = false;
             }
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            health -= 1;
         }
     }
 }
