@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2653054058303813204}
   - component: {fileID: 340660278993852960}
   - component: {fileID: 3363754642450620241}
-  - component: {fileID: 2890760892269905422}
+  - component: {fileID: 4862290532397500582}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -111,7 +111,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2890760892269905422
+--- !u!114 &4862290532397500582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,5 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6888bdb1795f7468e56ad93bc732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   speed: 2

@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class EnemyChasing : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public float speed;
 
     private float distance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
     }
+
+
 
     // Update is called once per frame
     void Update()
