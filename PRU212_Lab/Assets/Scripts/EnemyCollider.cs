@@ -23,5 +23,9 @@ public class EnemyCollider : MonoBehaviour
         {
             OnDied.Invoke();
         }
+        if (collision.transform.CompareTag("Bullet"))
+        {
+            OnDied.Invoke();
+        }
     }
 }
