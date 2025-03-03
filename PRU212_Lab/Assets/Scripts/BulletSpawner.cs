@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     public Transform firePoint;
-    public float fireRate = 1f;
+    public float fireRate = 2f;
     private float nextFireTime = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
