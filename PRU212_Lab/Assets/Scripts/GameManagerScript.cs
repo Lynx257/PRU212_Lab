@@ -23,6 +23,12 @@ public class GameManagerScript : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

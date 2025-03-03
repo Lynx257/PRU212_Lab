@@ -17,6 +17,8 @@ public class HealthController : MonoBehaviour
         
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +26,10 @@ public class HealthController : MonoBehaviour
         {
             if(health <= 0 && !isDead)
             {
+                
                 isDead = true;
                 gameManager.GameOver();
+                Time.timeScale = 0f;
             }
             DisplayHeart();
         }

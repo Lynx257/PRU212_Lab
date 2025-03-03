@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timeIsRunning = true;
+        DisplayTime(timeRemaining);
     }
 
     // Update is called once per frame
@@ -28,7 +29,6 @@ public class Timer : MonoBehaviour
 
     void DisplayTime (float timeToDisplay)
     {
-        timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{00:00}:{01:00}", minutes, seconds);

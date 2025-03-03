@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 10f;
     private Rigidbody2D rb;
     private Score score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
