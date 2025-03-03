@@ -9,6 +9,8 @@ public class HealthController : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public GameManagerScript gameManager;
+    private bool isDead;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +22,11 @@ public class HealthController : MonoBehaviour
     {
         if (transform.gameObject.CompareTag("Player"))
         {
+            if(health <= 0 && !isDead)
+            {
+                isDead = true;
+                gameManager.GameOver();
+            }
             DisplayHeart();
         }
     }
