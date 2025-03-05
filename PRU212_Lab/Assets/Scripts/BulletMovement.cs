@@ -5,18 +5,13 @@ public class BulletMovement : MonoBehaviour
     public float speed = 10f;
     private Rigidbody2D rb;
     private Score score;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameObject scoreUI = GameObject.Find("Score");
-        if (scoreUI != null)
-        {
-            score = scoreUI.GetComponent<Score>();
-        }
+        score = FindFirstObjectByType<Score>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         rb.linearVelocity = transform.up * speed;
@@ -24,14 +19,15 @@ public class BulletMovement : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        transform.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            transform.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+
             if (score != null)
             {
                 score.EnemyKilled();
