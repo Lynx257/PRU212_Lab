@@ -16,6 +16,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void PlayGame()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadSceneAsync(0);
     }
 
